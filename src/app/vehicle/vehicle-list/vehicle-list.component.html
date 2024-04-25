@@ -1,0 +1,26 @@
+<div class="m-2">
+
+    <table class="table p-3 md" *ngIf="vehicles">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" *ngFor="let header of headers">
+                    {{ header }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicle of vehicles;let i = index;">
+                <th scope="row">{{ vehicle.id }}</th>
+                <td>{{ vehicle.marca }}</td>
+                <td>{{ vehicle.linea }}</td>
+                <td>{{ vehicle.modelo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <p class="m-0" *ngFor="let item of marcasCounts">
+        Total {{ item.marca + ': ' + item.count }}
+    </p>
+
+</div>
